@@ -21,15 +21,13 @@ func _process(_delta):
 
 func _on_BlueCannon_shoot(Plasma, direction, location):
 	var p1 = Plasma.instance()
+	p1.position = location
+	p1.angular_velocity(direction)
 	add_child_below_node(get_parent(),p1)
-	p1.rotation = direction
-	p1.position = location + (Vector2(cos(p1.rotation), sin(p1.rotation))*60)
-	p1.velocity = Vector2(cos(p1.rotation), sin(p1.rotation))*60
 
 
 func _on_RedCannon_shoot(Plasma, direction, location):
 	var p2 = Plasma.instance()
+	p2.position = location
+	p2.angular_velocity(direction + PI)
 	add_child_below_node(get_parent(),p2)
-	p2.rotation = direction + PI
-	p2.position = location + (Vector2(cos(p2.rotation), sin(p2.rotation))*60)
-	p2.velocity = Vector2(cos(p2.rotation), sin(p2.rotation))*60
