@@ -11,8 +11,8 @@ func _ready():
 	randomize()
 	var driller = load("res://Driller.tscn")
 	var enemy = driller.instance()
-	add_child_below_node(get_tree().get_root().get_node("BlackHole"),enemy)
-	enemy.angular_velocity(deg2rad(rand_range(1,360)))
+	add_child(enemy)
+	enemy.angular_velocity(rand_range(0, 2*PI))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
