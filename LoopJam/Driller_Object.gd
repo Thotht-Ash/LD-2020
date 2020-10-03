@@ -24,6 +24,7 @@ func _physics_process(delta):
 	if collision:
 		var collidername = collision.collider.name
 		if collidername != "BlackHoleBody":
+			print(collidername)
 			get_parent().cleanup()
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation
