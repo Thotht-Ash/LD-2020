@@ -70,6 +70,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean/wall"]
 shape = SubResource( 3 )
 
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean/wall"]
+wait_time = 3.0
+
 [node name="wall section clean2" type="Sprite" parent="Walls"]
 position = Vector2( -386.874, -50.3442 )
 rotation = 0.523599
@@ -84,6 +87,9 @@ script = ExtResource( 4 )
 position = Vector2( -110.634, -149.28 )
 shape = SubResource( 3 )
 
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean2/wall"]
+wait_time = 3.0
+
 [node name="wall section clean3" type="Sprite" parent="Walls"]
 position = Vector2( -234, -409 )
 rotation = 1.0472
@@ -96,6 +102,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean3/wall"]
 shape = SubResource( 3 )
 
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean3/wall"]
+wait_time = 3.0
+
 [node name="wall section clean4" type="Sprite" parent="Walls"]
 position = Vector2( 2.33301, -471.167 )
 rotation = 1.5708
@@ -104,6 +113,9 @@ texture = ExtResource( 6 )
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean4"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean4/wall"]
+wait_time = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean4/wall"]
 shape = SubResource( 3 )
@@ -120,6 +132,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean5/wall"]
 shape = SubResource( 3 )
 
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean5/wall"]
+wait_time = 3.0
+
 [node name="wall section clean6" type="Sprite" parent="Walls"]
 position = Vector2( 414.333, -235.766 )
 rotation = 2.61799
@@ -132,6 +147,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean6/wall"]
 shape = SubResource( 3 )
 
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean6/wall"]
+wait_time = 3.0
+
 [node name="wall section clean7" type="Sprite" parent="Walls"]
 position = Vector2( 476.666, 0 )
 rotation = -3.14159
@@ -140,6 +158,9 @@ texture = ExtResource( 6 )
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean7"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean7/wall"]
+wait_time = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean7/wall"]
 shape = SubResource( 3 )
@@ -156,6 +177,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean8/wall"]
 shape = SubResource( 3 )
 
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean8/wall"]
+wait_time = 3.0
+
 [node name="wall section clean9" type="Sprite" parent="Walls"]
 position = Vector2( 240.333, 413.802 )
 rotation = -2.09439
@@ -168,6 +192,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean9/wall"]
 shape = SubResource( 3 )
 
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean9/wall"]
+wait_time = 3.0
+
 [node name="wall section clean10" type="Sprite" parent="Walls"]
 position = Vector2( 4.09875, 474.401 )
 rotation = -1.5708
@@ -179,6 +206,9 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean10/wall"]
 shape = SubResource( 3 )
+
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean10/wall"]
+wait_time = 3.0
 
 [node name="wall section clean11" type="Sprite" parent="Walls"]
 position = Vector2( -234, 412.036 )
@@ -193,6 +223,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean11/wall"]
 shape = SubResource( 3 )
 
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean11/wall"]
+wait_time = 3.0
+
 [node name="wall section clean12" type="Sprite" parent="Walls"]
 position = Vector2( -409, 238.666 )
 rotation = -0.523599
@@ -206,6 +239,7 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean12/wall"]
 shape = SubResource( 3 )
 
-[node name="CutterTimer" type="Timer" parent="."]
+[node name="CutterTimer" type="Timer" parent="Walls/wall section clean12/wall"]
+wait_time = 3.0
 [connection signal="shoot" from="BlueCannon" to="." method="_on_BlueCannon_shoot"]
 [connection signal="shoot" from="RedCannon" to="." method="_on_RedCannon_shoot"]

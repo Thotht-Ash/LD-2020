@@ -5,9 +5,12 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 signal damaged(type)
+signal stop_cutter
 
 var normalised_v
 var scale_v = 2
+var connected = false
+var target
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,15 +23,23 @@ func angular_velocity(angle):
 	rotate(angle + PI/2)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var collision = move_and_collide(normalised_v * scale_v * delta)
 	if collision:
 		var collidername = collision.collider.name
 		if collidername == "wall":
-			self.connect("damaged", collision.collider, "damaged", ["type"])
-			emit_signal("damaged", "cutter")
-		if collidername.contains("lasma"):
+			target = collision.collider
+			self.connect("damaged", target, "damaged", ["type"])
+			emit_signal("damaged", "driller")
+		elif collidername == "RedCannon" or collidername == "BlueCannon":
+			if connected:
+				self.connect("stop_cutter", target, "stopped_cutter")
+				emit_signal("stop_cutter")
+		else:
+			if connected:
+				connected = false
+				
 			get_parent().cleanup()
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation

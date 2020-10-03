@@ -18,6 +18,15 @@ func damaged(type):
 	print("A Driller hit")
 	if type == "driller":
 		health = health - 5
-	
+	if type == "cutter":
+		health = health - 1
+		$CutterTimer.connect("timeout", self, "cutter_timeout")
+		$CutterTimer.start()
 	# if health < threshold:
 	# load new image
+
+func cutter_timeout():
+	health = health - 1
+	
+func stopped_cutter():
+	$CutterTimer.stop()
