@@ -4,19 +4,15 @@
 [ext_resource path="res://Plasma.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 44.7038
-height = 96.6288
 
 [node name="Plasma" type="KinematicBody2D"]
 collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4.01044, 0.312836 )
 rotation = 1.5708
-scale = Vector2( 0.25, 0.25 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.25, 0.25 )
+rotation = 1.5708
 texture = ExtResource( 1 )
