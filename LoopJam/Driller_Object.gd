@@ -13,16 +13,18 @@ func _ready():
 	pass # Replace with function body.
 
 func angular_velocity(angle):
-	normalised_v = Vector2(cos(angle),-sin(angle))
-	rotate(angle)
+	normalised_v = Vector2(cos(angle),sin(angle))
+	position = position + normalised_v * 10
+	rotate(angle + PI/2)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var collision = move_and_collide(normalised_v * scale_v * delta)
 	if collision:
-		var collidername = collision.collider_metadata
-		print(collidername)
-		get_parent().cleanup()
+		var collidername = collision.collider.name
+		if collidername != "BlackHoleBody":
+			get_parent().cleanup()
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation
 		#else:

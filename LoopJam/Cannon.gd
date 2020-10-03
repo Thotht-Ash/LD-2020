@@ -14,9 +14,9 @@ var Plasma = preload("res://Plasma.tscn")
 #func _ready():
 	#pass # Replace with function body.
 
-func _input(event):
-	if Input.is_action_pressed("shoot"):
-		emit_signal("shoot", Plasma, rotation, position)
+func _input(_event):
+	if Input.is_action_just_pressed("shoot"):
+		emit_signal("shoot", Plasma, global_rotation, global_position)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

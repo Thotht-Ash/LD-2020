@@ -1,4 +1,4 @@
-extends Node2D
+extends CollisionShape2D
 
 
 # Declare member variables here. Examples:
@@ -8,17 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	self.set_meta("type","BlackHole")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Ship_shoot(plasma, direction, location):
-	var p1 = plasma.instance()
-	p1.position = location
-	p1.angular_velocity(direction)
-	p1.set_meta('type','shot')
-	add_child(p1)

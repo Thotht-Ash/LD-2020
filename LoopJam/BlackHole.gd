@@ -11,6 +11,7 @@ func _ready():
 	randomize()
 	var driller = load("res://Driller.tscn")
 	var enemy = driller.instance()
+	enemy.set_meta('type','driller')
 	add_child(enemy)
 	enemy.angular_velocity(rand_range(0, 2*PI))
 

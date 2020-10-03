@@ -10,11 +10,12 @@ var velocity
 #func _process(delta):
 #	pass
 func angular_velocity(angle):
-	velocity = Vector2(cos(angle),-sin(angle))
+	velocity = Vector2(cos(angle),sin(angle))
 	rotate(angle)
 
 func _physics_process(delta):
-	var collision = move_and_collide(velocity * 20 * delta)
+	var collision = move_and_collide(velocity * 100 * delta)
 	if collision:
-		var collidername = collision.collider_metadata
-		print(collidername)
+		var collidername = collision.collider.name
+		if collidername == "BlackHoleBody":
+			call_deferred("free")

@@ -12,3 +12,4 @@ position = Vector2( 534, 300 )
 
 [node name="BlackHole" parent="." instance=ExtResource( 3 )]
 position = Vector2( 534, 300 )
+[connection signal="shoot" from="Ship" to="." method="_on_Ship_shoot"]

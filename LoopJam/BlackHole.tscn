@@ -10,12 +10,12 @@ radius = 30.0
 scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 2 )
 
-[node name="BlackHoleArea" type="Area2D" parent="."]
-
-[node name="BlackHoleCollision" type="CollisionShape2D" parent="BlackHoleArea"]
+[node name="BlackHoleBody" type="StaticBody2D" parent="."]
 scale = Vector2( 1, 1 )
+
+[node name="BlackHoleCollision" type="CollisionShape2D" parent="BlackHoleBody"]
 shape = SubResource( 1 )
 
-[node name="blackhole" type="Sprite" parent="BlackHoleArea/BlackHoleCollision"]
+[node name="blackhole" type="Sprite" parent="BlackHoleBody"]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
