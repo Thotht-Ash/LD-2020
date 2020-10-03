@@ -28,7 +28,7 @@ func _physics_process(delta):
 		if collidername == "wall":
 			self.connect("damaged", collision.collider, "damaged", ["type"])
 			emit_signal("damaged", "cutter")
-		if collidername.contains("lasma"):
+		if collidername.ends_with("lasma"):
 			get_parent().cleanup()
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation

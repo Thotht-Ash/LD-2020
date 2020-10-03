@@ -36,10 +36,12 @@ func _physics_process(delta):
 			if connected:
 				self.connect("stop_cutter", target, "stopped_cutter")
 				emit_signal("stop_cutter")
+				connected = false
 		else:
 			if connected:
+				self.connect("stop_cutter", target, "stopped_cutter")
+				emit_signal("stop_cutter")
 				connected = false
-				
 			get_parent().cleanup()
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation
