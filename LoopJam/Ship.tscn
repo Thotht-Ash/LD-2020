@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://cannon tube.png" type="Texture" id=1]
 [ext_resource path="res://cannon base.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://wallsection.gd" type="Script" id=4]
 [ext_resource path="res://Ship.gd" type="Script" id=5]
 [ext_resource path="res://wall section clean.png" type="Texture" id=6]
+[ext_resource path="res://wall_physical.tres" type="PhysicsMaterial" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 100.0
@@ -62,7 +63,8 @@ scale = Vector2( 0.6, 0.6 )
 position = Vector2( -473.333, 0 )
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean/wall"]
@@ -74,7 +76,8 @@ rotation = 0.523599
 texture = ExtResource( 6 )
 offset = Vector2( -111.873, -149.517 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean2"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean2"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean2/wall"]
@@ -86,7 +89,8 @@ position = Vector2( -234, -409 )
 rotation = 1.0472
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean3"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean3"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean3/wall"]
@@ -97,7 +101,8 @@ position = Vector2( 2.33301, -471.167 )
 rotation = 1.5708
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean4"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean4"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean4/wall"]
@@ -108,7 +113,8 @@ position = Vector2( 240.333, -409 )
 rotation = 2.0944
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean5"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean5"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean5/wall"]
@@ -119,7 +125,8 @@ position = Vector2( 414.333, -235.766 )
 rotation = 2.61799
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean6"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean6"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean6/wall"]
@@ -130,7 +137,8 @@ position = Vector2( 476.666, 0 )
 rotation = -3.14159
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean7"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean7"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean7/wall"]
@@ -141,7 +149,8 @@ position = Vector2( 414.333, 238.666 )
 rotation = -2.61799
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean8"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean8"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean8/wall"]
@@ -152,7 +161,8 @@ position = Vector2( 240.333, 413.802 )
 rotation = -2.09439
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean9"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean9"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean9/wall"]
@@ -163,7 +173,8 @@ position = Vector2( 4.09875, 474.401 )
 rotation = -1.5708
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean10"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean10"]
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean10/wall"]
@@ -174,8 +185,9 @@ position = Vector2( -234, 412.036 )
 rotation = -1.0472
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean11"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean11"]
 scale = Vector2( 1, 1 )
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean11/wall"]
@@ -186,8 +198,9 @@ position = Vector2( -409, 238.666 )
 rotation = -0.523599
 texture = ExtResource( 6 )
 
-[node name="wall" type="KinematicBody2D" parent="Walls/wall section clean12"]
+[node name="wall" type="StaticBody2D" parent="Walls/wall section clean12"]
 scale = Vector2( 1, 1 )
+physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean12/wall"]

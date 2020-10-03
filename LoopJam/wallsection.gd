@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends StaticBody2D
 
 var zero = Vector2(0,0)
 var health = 50
@@ -13,10 +13,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var collision = move_and_collide(zero)
-	if collision:
-		var collidername = collision.collider.name
-		if collidername != "RedCannon" && collidername != "wall":
-			print(collidername)
-			health = health - 10
+#func _process(_delta):
+func damaged(type):
+	print("A Driller hit")
+	if type == "driller":
+		health = health - 5
+	
+	# if health < threshold:
+	# load new image

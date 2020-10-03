@@ -19,3 +19,5 @@ func _physics_process(delta):
 		var collidername = collision.collider.name
 		if collidername == "BlackHoleBody":
 			call_deferred("free")
+		elif collidername == "wall":
+			call_deferred("free")

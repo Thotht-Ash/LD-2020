@@ -4,6 +4,8 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+signal damaged(type)
+
 var normalised_v
 var scale_v = 2
 
@@ -23,8 +25,10 @@ func _physics_process(delta):
 	var collision = move_and_collide(normalised_v * scale_v * delta)
 	if collision:
 		var collidername = collision.collider.name
+		if collidername == "wall":
+			self.connect("damaged", collision.collider, "damaged", ["type"])
+			emit_signal("damaged")
 		if collidername != "BlackHoleBody":
-			print(collidername)
 			get_parent().cleanup()
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation
