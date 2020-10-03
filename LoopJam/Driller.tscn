@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://driller.png" type="Texture" id=1]
+[ext_resource path="res://Driller_Object.gd" type="Script" id=2]
+[ext_resource path="res://Driller.gd" type="Script" id=3]
+
+[node name="Driller" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Driller_Object" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Driller_Object"]
+polygon = PoolVector2Array( 0, -30, 30, 30, -30, 30 )
+
+[node name="driller" type="Sprite" parent="Driller_Object"]
+rotation = 1.74846e-07
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
