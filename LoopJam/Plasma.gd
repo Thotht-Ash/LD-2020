@@ -29,3 +29,6 @@ func _physics_process(delta):
 			var reflect = collision.remainder.bounce(collision.normal)
 			velocity = velocity.bounce(collision.normal)
 			move_and_collide(reflect)
+			
+func destroy():
+	call_deferred("free")

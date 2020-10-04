@@ -6,12 +6,13 @@ extends Node2D
 # var b = "text"
 var driller = load("res://Driller.tscn")
 var cutter = load("res://Cutter.tscn")
+var timer = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	spawn()
-	$Timer.start()
+	$Timer.start(timer)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
