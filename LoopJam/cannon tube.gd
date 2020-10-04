@@ -13,7 +13,7 @@ func _ready():
 func _input(_event):
 	if Input.is_action_just_pressed("shoot"):
 			if timeSinceFiring > firingCooldown:
-				emit_signal("shoot", Plasma, rotation, global_position)
+				emit_signal("shoot", Plasma, global_rotation, global_position)
 				timeSinceFiring = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export var speed = 100
 var velocity
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +15,7 @@ func angular_velocity(angle):
 	rotate(angle)
 
 func _physics_process(delta):
-	var collision = move_and_collide(velocity * 100 * delta)
+	var collision = move_and_collide(velocity * speed * delta)
 	if collision:
 		var collidername = collision.collider.name
 		if collidername == "BlackHoleBody":
@@ -22,10 +23,4 @@ func _physics_process(delta):
 		elif collidername == "wall":
 			var reflect = collision.remainder.bounce(collision.normal)
 			velocity = velocity.bounce(collision.normal)
-			rotation = velocity[1]
-			move_and_collide(reflect)
-		elif collidername == "cannon_base":
-			var reflect = collision.remainder.bounce(collision.normal)
-			velocity = velocity.bounce(collision.normal)
-			rotation = velocity[1]
 			move_and_collide(reflect)
