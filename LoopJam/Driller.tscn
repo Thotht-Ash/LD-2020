@@ -41,6 +41,7 @@ script = ExtResource( 3 )
 [node name="Driller_Object" type="KinematicBody2D" parent="."]
 collision_mask = 0
 script = ExtResource( 2 )
+speed = 20
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Driller_Object"]
 position = Vector2( -0.0398885, -6.18427 )

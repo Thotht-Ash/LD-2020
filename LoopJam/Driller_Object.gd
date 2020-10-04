@@ -6,6 +6,7 @@ extends KinematicBody2D
 signal damaged(type)
 signal destroy
 
+export var speed = 10
 var normalised_v
 var scale_v = 2
 
@@ -16,7 +17,7 @@ func _ready():
 
 func angular_velocity(angle):
 	normalised_v = Vector2(cos(angle),sin(angle))
-	position = position + normalised_v * 10
+	position = position + normalised_v * speed
 	rotate(angle + PI/2)
 
 

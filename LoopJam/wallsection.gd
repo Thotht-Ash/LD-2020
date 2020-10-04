@@ -24,8 +24,8 @@ func damaged(type):
 	print("A Driller hit")
 	if type == "driller":
 		health = health - 50
-	if type == "cutter":
-		health = health - 1
+	if type == "bouncer":
+		health = health - 50
 		$CutterTimer.connect("timeout", self, "cutter_timeout")
 		$CutterTimer.start()
 	#if health < threshold:
