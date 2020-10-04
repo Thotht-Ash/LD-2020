@@ -1,27 +1,29 @@
 extends KinematicBody2D
 
-
 # Declare member variables here. Examples:
 
 signal damaged(type)
 signal destroy
 
 export var hitPoints = 3
+export var speed = 10
+var rotationSpeed
 var normalised_v
 var scale_v = 2
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	rotationSpeed = rand_range(-PI/360,PI/360)
 
 func angular_velocity(angle):
 	normalised_v = Vector2(cos(angle),sin(angle))
-	position = position + normalised_v * 10
+	position = position + normalised_v * speed
 	rotate(rand_range(0,360))
 
 func _process(delta):
-	if hitPoints > 1:
+	rotation += rotationSpeed
+	if hitPoints < 1:
 		get_parent().cleanup()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.	
@@ -33,15 +35,20 @@ func _physics_process(delta):
 			self.connect("damaged", collision.collider, "damaged")
 			emit_signal("damaged", "bouncer")
 			self.disconnect("damaged", collision.collider, "damaged")
+			hitPoints -= 1
 		elif "Plasma" in collidername:
 			self.connect("destroy", collision.collider, "destroy")
 			emit_signal("destroy")
 			self.disconnect("destroy", collision.collider, "destroy")
-			get_parent().cleanup()
+			hitPoints -= 1
 		elif collidername == "BlueCannon" or collidername == "RedCannon":
-			get_parent().cleanup()
+			hitPoints -= 1
 		else:
 			print(collidername)
+		
+		var reflect = collision.remainder.bounce(collision.normal)
+		normalised_v = normalised_v.bounce(collision.normal)
+		move_and_collide(reflect)
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation
 		#else:

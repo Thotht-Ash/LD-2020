@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var driller = load("res://Driller.tscn")
+var bouncer = load("res://Bouncer.tscn")
 var timer = 5
 
 # Called when the node enters the scene tree for the first time.
@@ -18,10 +19,10 @@ func _ready():
 
 func spawn():
 	var enemy
-	#if randi() % 2 == 0:
-	enemy = driller.instance()
-	#else:
-		#enemy = cutter.instance()
+	if randi() % 2 == 0:
+		enemy = driller.instance()
+	else:
+		enemy = bouncer.instance()
 	add_child(enemy)
 	enemy.angular_velocity(rand_range(0, 2*PI))
 

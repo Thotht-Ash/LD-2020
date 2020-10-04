@@ -23,6 +23,10 @@ func _process(_delta):
 func damaged(type):
 	if type == "driller":
 		health = health - 50
+	if type == "bouncer":
+		health = health - 50
+		$CutterTimer.connect("timeout", self, "cutter_timeout")
+		$CutterTimer.start()
 	#if health < threshold:
 	# load new image
 
