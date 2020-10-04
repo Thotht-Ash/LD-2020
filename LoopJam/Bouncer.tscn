@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bouncer.gd" type="Script" id=1]
+[ext_resource path="res://Bouncer_Object.gd" type="Script" id=2]
+[ext_resource path="res://alien_bounce.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 45.9973
+
+[node name="Bouncer" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Bouncer_Object" type="KinematicBody2D" parent="."]
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Bouncer_Object"]
+position = Vector2( -0.0398885, -6.18427 )
+shape = SubResource( 1 )
+
+[node name="driller" type="Sprite" parent="Bouncer_Object"]
+position = Vector2( -1.00138, -6.50895 )
+rotation = 1.74846e-07
+texture = ExtResource( 3 )

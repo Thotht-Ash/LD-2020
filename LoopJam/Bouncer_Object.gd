@@ -5,29 +5,24 @@ extends KinematicBody2D
 
 signal damaged(type)
 signal destroy
-signal gameover
 
+export var hitPoints = 3
 var normalised_v
 var scale_v = 2
 
-func destroy():
-	if global_position.x < 0 or global_position.y < 0 or global_position.x > 1024 or global_position.y > 600:
-		connect("gameover", get_node("/root/World"), "end_state")
-		emit_signal("gameover")
-		disconnect("gameover", get_node("/root/World"), "end_state")
-	get_parent().destroy()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-func angular_velocity(angle, stop=false):
-	if not stop:
-		normalised_v = Vector2(cos(angle),sin(angle))
-		position = position + normalised_v * 10
-		rotate(angle + PI/2)
-	else:
-		normalised_v = Vector2(0,0)
+func angular_velocity(angle):
+	normalised_v = Vector2(cos(angle),sin(angle))
+	position = position + normalised_v * 10
+	rotate(rand_range(0,360))
 
+func _process(delta):
+	if hitPoints > 1:
+		get_parent().cleanup()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.	
 func _physics_process(delta):
@@ -36,17 +31,15 @@ func _physics_process(delta):
 		var collidername = collision.collider.name
 		if collidername == "wall":
 			self.connect("damaged", collision.collider, "damaged")
-			emit_signal("damaged", "driller")
+			emit_signal("damaged", "bouncer")
 			self.disconnect("damaged", collision.collider, "damaged")
-			get_parent().destroy()
 		elif "Plasma" in collidername:
-			print(collidername)
 			self.connect("destroy", collision.collider, "destroy")
 			emit_signal("destroy")
 			self.disconnect("destroy", collision.collider, "destroy")
-			get_parent().destroy()
+			get_parent().cleanup()
 		elif collidername == "BlueCannon" or collidername == "RedCannon":
-			get_parent().destroy()
+			get_parent().cleanup()
 		else:
 			print(collidername)
 		#if collidername.begins_with("wall"):
