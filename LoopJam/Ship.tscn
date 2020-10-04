@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://cannon tube.png" type="Texture" id=1]
 [ext_resource path="res://cannon base.png" type="Texture" id=2]
@@ -9,7 +9,9 @@
 [ext_resource path="res://wall_physical.tres" type="PhysicsMaterial" id=7]
 [ext_resource path="res://cannon tube.gd" type="Script" id=8]
 [ext_resource path="res://window.png" type="Texture" id=9]
+[ext_resource path="res://wallbreak v2.wav" type="AudioStream" id=10]
 [ext_resource path="res://SpaceGirders.png" type="Texture" id=11]
+[ext_resource path="res://break.gd" type="Script" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 48.4116
@@ -170,6 +172,11 @@ shape = SubResource( 3 )
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean/wall"]
 wait_time = 3.0
 
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
+
 [node name="wall section clean2" type="Sprite" parent="Walls"]
 position = Vector2( -386.874, -50.3442 )
 rotation = 0.523599
@@ -194,6 +201,11 @@ shape = SubResource( 3 )
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean2/wall"]
 wait_time = 3.0
 
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean2"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
+
 [node name="wall section clean3" type="Sprite" parent="Walls"]
 position = Vector2( -234, -409 )
 rotation = 1.0472
@@ -216,6 +228,11 @@ shape = SubResource( 3 )
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean3/wall"]
 wait_time = 3.0
 
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean3"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
+
 [node name="wall section clean4" type="Sprite" parent="Walls"]
 position = Vector2( 2.33301, -471.167 )
 rotation = 1.5708
@@ -231,6 +248,11 @@ wait_time = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean4/wall"]
 shape = SubResource( 3 )
+
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean4"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
 
 [node name="wall section clean5" type="Sprite" parent="Walls"]
 position = Vector2( 240.333, -409 )
@@ -254,6 +276,11 @@ shape = SubResource( 3 )
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean5/wall"]
 wait_time = 3.0
 
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean5"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
+
 [node name="wall section clean6" type="Sprite" parent="Walls"]
 position = Vector2( 414.333, -235.766 )
 rotation = 2.61799
@@ -269,6 +296,11 @@ shape = SubResource( 3 )
 
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean6/wall"]
 wait_time = 3.0
+
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean6"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
 
 [node name="wall section clean7" type="Sprite" parent="Walls"]
 position = Vector2( 476.666, 0 )
@@ -292,6 +324,11 @@ wait_time = 3.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean7/wall"]
 shape = SubResource( 3 )
 
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean7"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
+
 [node name="wall section clean8" type="Sprite" parent="Walls"]
 position = Vector2( 414.333, 238.666 )
 rotation = -2.61799
@@ -313,6 +350,11 @@ shape = SubResource( 3 )
 
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean8/wall"]
 wait_time = 3.0
+
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean8"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
 
 [node name="wall section clean9" type="Sprite" parent="Walls"]
 position = Vector2( 240.333, 413.802 )
@@ -342,6 +384,11 @@ shape = SubResource( 3 )
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean9/wall"]
 wait_time = 3.0
 
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean9"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
+
 [node name="wall section clean10" type="Sprite" parent="Walls"]
 position = Vector2( 4.09875, 474.401 )
 rotation = -1.5708
@@ -364,6 +411,11 @@ shape = SubResource( 3 )
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean10/wall"]
 wait_time = 3.0
 
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean10"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
+
 [node name="wall section clean11" type="Sprite" parent="Walls"]
 position = Vector2( -234, 412.036 )
 rotation = -1.0472
@@ -385,6 +437,11 @@ shape = SubResource( 3 )
 
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean11/wall"]
 wait_time = 3.0
+
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean11"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
 
 [node name="wall section clean12" type="Sprite" parent="Walls"]
 position = Vector2( -409, 238.666 )
@@ -413,8 +470,24 @@ shape = SubResource( 3 )
 
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean12/wall"]
 wait_time = 3.0
+
+[node name="break" type="AudioStreamPlayer" parent="Walls/wall section clean12"]
+stream = ExtResource( 10 )
+volume_db = -30.0
+script = ExtResource( 12 )
 [connection signal="shoot" from="BlueCannon" to="." method="_on_BlueCannon_shoot"]
 [connection signal="shoot" from="BlueCannon/cannon base/cannon tube" to="BlueCannon" method="_on_cannon_tube_shoot"]
 [connection signal="shoot" from="RedCannon" to="." method="_on_RedCannon_shoot"]
 [connection signal="shoot" from="RedCannon/cannon base/cannon tube" to="RedCannon" method="_on_cannon_tube_shoot"]
-[connection signal="destroyed" from="Walls/wall section clean/wall" to="Walls/wall section clean" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean/wall" to="Walls/wall section clean/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean2/wall" to="Walls/wall section clean2/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean3/wall" to="Walls/wall section clean3/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean4/wall" to="Walls/wall section clean4/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean5/wall" to="Walls/wall section clean5/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean6/wall" to="Walls/wall section clean6/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean7/wall" to="Walls/wall section clean7/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean8/wall" to="Walls/wall section clean8/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean9/wall" to="Walls/wall section clean9/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean10/wall" to="Walls/wall section clean10/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean11/wall" to="Walls/wall section clean11/break" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean12/wall" to="Walls/wall section clean12/break" method="_on_wall_destroyed"]

@@ -10,6 +10,7 @@ export var speed = 10
 var rotationSpeed
 var normalised_v
 var scale_v = 2
+var dead = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,17 +22,21 @@ func destroy():
 		connect("gameover", get_node("/root/World"), "end_state")
 		emit_signal("gameover")
 		disconnect("gameover", get_node("/root/World"), "end_state")
-	get_parent().destroy()
+		get_parent().destroy(false)
 
-func angular_velocity(angle):
-	normalised_v = Vector2(cos(angle),sin(angle))
-	position = position + normalised_v * speed
-	rotate(rand_range(0,360))
+func angular_velocity(angle, stop=false):
+	if not stop:
+		normalised_v = Vector2(cos(angle),sin(angle))
+		position = position + normalised_v * 10
+		rotate(angle + PI/2)
+	else:
+		normalised_v = Vector2(0,0)
 
 func _process(delta):
 	rotation += rotationSpeed
-	if hitPoints < 1:
+	if hitPoints < 1 and not dead:
 		get_parent().destroy()
+		dead = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.	
 func _physics_process(delta):

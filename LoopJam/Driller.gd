@@ -6,12 +6,17 @@ extends Node2D
 func angular_velocity(angle):
 	get_node("Driller_Object").angular_velocity(angle)
 	
-func destroy():
+func destroy(sound=true):
 	get_node("Driller_Object").angular_velocity(0, true)
 	get_node("Driller_Object/driller").visible = false
+	if $Driller_Object/CollisionPolygon2D:
+		$Driller_Object/CollisionPolygon2D.free()
 	get_node("Driller_Object/deathAnimation").visible = true
 	get_node("Driller_Object/deathAnimation").play()
+	if sound:
+		get_node("deathsound").play()
 	yield(get_node("Driller_Object/deathAnimation"),"animation_finished")
+	#yield(get_node("deathsound"),"finished")
 	call_deferred("free")
 
 # Called when the node enters the scene tree for the first time.

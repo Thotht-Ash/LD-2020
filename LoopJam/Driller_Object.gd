@@ -18,7 +18,7 @@ func destroy():
 		connect("gameover", get_node("/root/World"), "end_state")
 		emit_signal("gameover")
 		disconnect("gameover", get_node("/root/World"), "end_state")
-	get_parent().destroy()
+		get_parent().destroy(false)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
