@@ -18,7 +18,7 @@ func _process(_delta):
 
 
 func _on_BlueCannon_shoot(Plasma, direction, location):
-	emit_signal("shoot", Plasma, direction, location)
+	emit_signal("shoot", Plasma, direction - PI/2, location)
 
 func _on_RedCannon_shoot(Plasma, direction, location):
-	emit_signal("shoot", Plasma, direction - PI, location)
+	emit_signal("shoot", Plasma, direction - PI/2, location)
