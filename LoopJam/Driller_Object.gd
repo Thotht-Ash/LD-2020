@@ -7,8 +7,11 @@ signal damaged(type)
 signal destroy
 signal gameover
 
+
 var normalised_v
-var scale_v = 2
+export var scale_v = 2
+export var acceleration = 5
+var accelerationFactor = acceleration/1000+1
 
 func destroy():
 	if global_position.x < 0 or global_position.y < 0 or global_position.x > 1024 or global_position.y > 600:
@@ -53,4 +56,4 @@ func _physics_process(delta):
 		#	pass # play wall animation
 		#else:
 		#	pass # play shot animation
-	scale_v = scale_v*1.005
+	scale_v = scale_v*accelerationFactor

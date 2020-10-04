@@ -1,5 +1,9 @@
 extends Node2D
 
+signal GameOver
+signal GameRestart
+
+var gameOver = false
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -24,4 +28,10 @@ func _on_Ship_shoot(plasma, direction, location):
 	add_child(p1)
 
 func end_state():
+	emit_signal("GameOver")
 	print("Endstate reached")
+
+func _input(event):
+	if Input.is_action_pressed("restart") && (gameOver == true):
+		gameOver = false
+		emit_signal("GameRestart")

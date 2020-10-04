@@ -46,6 +46,10 @@ script = ExtResource( 6 )
 stream = ExtResource( 8 )
 volume_db = -20.0
 script = ExtResource( 9 )
+[connection signal="GameOver" from="." to="BlackHole" method="_on_World_GameOver"]
+[connection signal="GameOver" from="." to="Ship" method="_on_World_GameOver"]
+[connection signal="GameRestart" from="." to="BlackHole" method="_on_World_GameRestart"]
+[connection signal="GameRestart" from="." to="Ship" method="_on_World_GameRestart"]
 [connection signal="shoot" from="Ship" to="." method="_on_Ship_shoot"]
 [connection signal="body_exited" from="PlayArea" to="PlayArea" method="_on_PlayArea_body_exited"]
 [connection signal="finished" from="start_sound" to="BGM-CREDIT" method="_on_start_sound_finished"]

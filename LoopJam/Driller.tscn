@@ -43,6 +43,8 @@ script = ExtResource( 3 )
 collision_layer = 5
 collision_mask = 0
 script = ExtResource( 2 )
+scale_v = 50
+acceleration = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Driller_Object"]
 position = Vector2( -0.0398885, -6.18427 )
