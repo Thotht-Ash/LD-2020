@@ -6,6 +6,7 @@ extends KinematicBody2D
 signal damaged(type)
 signal destroy
 
+export var hitPoints = 3
 var normalised_v
 var scale_v = 2
 
@@ -17,8 +18,11 @@ func _ready():
 func angular_velocity(angle):
 	normalised_v = Vector2(cos(angle),sin(angle))
 	position = position + normalised_v * 10
-	rotate(angle + PI/2)
+	rotate(rand_range(0,360))
 
+func _process(delta):
+	if hitPoints > 1:
+		get_parent().cleanup()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.	
 func _physics_process(delta):
@@ -27,9 +31,8 @@ func _physics_process(delta):
 		var collidername = collision.collider.name
 		if collidername == "wall":
 			self.connect("damaged", collision.collider, "damaged")
-			emit_signal("damaged", "driller")
+			emit_signal("damaged", "bouncer")
 			self.disconnect("damaged", collision.collider, "damaged")
-			get_parent().cleanup()
 		elif "Plasma" in collidername:
 			self.connect("destroy", collision.collider, "destroy")
 			emit_signal("destroy")

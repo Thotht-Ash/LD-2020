@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://cannon tube.png" type="Texture" id=1]
 [ext_resource path="res://cannon base.png" type="Texture" id=2]
@@ -10,12 +10,13 @@
 [ext_resource path="res://cannon tube.gd" type="Script" id=8]
 [ext_resource path="res://window.png" type="Texture" id=9]
 [ext_resource path="res://wallSprite.gd" type="Script" id=10]
+[ext_resource path="res://SpaceGirders.png" type="Texture" id=11]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 48.4116
 height = 82.2352
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 38.5288
 height = 110.308
 
@@ -25,6 +26,83 @@ extents = Vector2( 25, 130 )
 [node name="Ship" type="Node2D"]
 script = ExtResource( 5 )
 
+[node name="Girders" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Girder1" type="Sprite" parent="Girders"]
+position = Vector2( -272.664, 0.583981 )
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder2" type="Sprite" parent="Girders"]
+position = Vector2( -235.499, -138.449 )
+rotation = 0.523599
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder3" type="Sprite" parent="Girders"]
+position = Vector2( -135.439, -237.987 )
+rotation = 1.0472
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder4" type="Sprite" parent="Girders"]
+position = Vector2( 0, -274 )
+rotation = 1.5708
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder5" type="Sprite" parent="Girders"]
+position = Vector2( 137.926, -236.441 )
+rotation = 2.0944
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder6" type="Sprite" parent="Girders"]
+position = Vector2( 238.094, -137.015 )
+rotation = 2.61799
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder7" type="Sprite" parent="Girders"]
+position = Vector2( 274.397, 0 )
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder8" type="Sprite" parent="Girders"]
+position = Vector2( 238.011, 138.818 )
+rotation = 0.523599
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder9" type="Sprite" parent="Girders"]
+position = Vector2( 139.955, 237.648 )
+rotation = 1.0472
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder10" type="Sprite" parent="Girders"]
+position = Vector2( 0, 274 )
+rotation = 1.5708
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder11" type="Sprite" parent="Girders"]
+position = Vector2( -137.335, 237.251 )
+rotation = 2.0944
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
+[node name="Girder12" type="Sprite" parent="Girders"]
+position = Vector2( -236.215, 137.351 )
+rotation = 2.61799
+scale = Vector2( 0.7, 1.2 )
+texture = ExtResource( 11 )
+
 [node name="BlueCannon" type="Area2D" parent="."]
 position = Vector2( -260, 0 )
 scale = Vector2( 0.25, 0.25 )
@@ -32,7 +110,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueCannon"]
 position = Vector2( 3.06616, 1.00137 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="cannon base" type="Sprite" parent="BlueCannon"]
 rotation = 1.5708
@@ -51,7 +129,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedCannon"]
 position = Vector2( 1.96997, -1.22943 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="cannon base" type="Sprite" parent="RedCannon"]
 rotation = -1.5708
@@ -334,13 +412,6 @@ shape = SubResource( 3 )
 
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean12/wall"]
 wait_time = 3.0
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="shoot" from="BlueCannon" to="." method="_on_BlueCannon_shoot"]
 [connection signal="shoot" from="BlueCannon/cannon base/cannon tube" to="BlueCannon" method="_on_cannon_tube_shoot"]
 [connection signal="shoot" from="RedCannon" to="." method="_on_RedCannon_shoot"]
