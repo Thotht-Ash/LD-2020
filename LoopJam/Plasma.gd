@@ -21,9 +21,9 @@ func _physics_process(delta):
 	if collision:
 		var collidername = collision.collider.name
 		if collidername == "BlackHoleBody":
-			self.connect("blackhole_contact", collision.collider, "spawn")
-			emit_signal("blackhole_contact")
-			self.disconnect("blackhole_contact", collision.collider, "spawn")
+			#self.connect("blackhole_contact", collision.collider, "spawn")
+			#emit_signal("blackhole_contact")
+			#self.disconnect("blackhole_contact", collision.collider, "spawn")
 			call_deferred("free")
 		elif collidername == "wall":
 			var reflect = collision.remainder.bounce(collision.normal)
