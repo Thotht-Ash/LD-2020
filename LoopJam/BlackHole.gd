@@ -14,10 +14,10 @@ func _ready():
 
 func spawn():
 	var enemy
-	if randi() % 2 == 0:
-		enemy = driller.instance()
-	else:
+	if randi() % 4 == 0:
 		enemy = bouncer.instance()
+	else:
+		enemy = driller.instance()
 	add_child(enemy)
 	enemy.angular_velocity(rand_range(0, 2*PI))
 
