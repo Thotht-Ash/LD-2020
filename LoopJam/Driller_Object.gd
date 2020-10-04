@@ -26,10 +26,14 @@ func _physics_process(delta):
 	if collision:
 		var collidername = collision.collider.name
 		if collidername == "wall":
-			self.connect("damaged", collision.collider, "damaged", ["type"])
-			emit_signal("damaged", "cutter")
-		if collidername.ends_with("lasma"):
+			self.connect("damaged", collision.collider, "damaged")
+			emit_signal("damaged", "driller")
+			self.disconnect("damaged", collision.collider, "damaged")
 			get_parent().cleanup()
+		elif "Plasma" in collidername or collidername == "BlueCannon" or collidername == "RedCannon":
+			get_parent().cleanup()
+		else:
+			print(collidername)
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation
 		#else:
