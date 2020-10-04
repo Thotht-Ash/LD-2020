@@ -18,8 +18,9 @@ func _input(_event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	look_at(get_global_mouse_position())
-	rotation += PI/2
+	if get_node("/root/World/Ship").gameOver == false:
+		look_at(get_global_mouse_position())
+		rotation += PI/2
 	timeSinceFiring += 1
 
 

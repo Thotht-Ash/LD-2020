@@ -1,9 +1,5 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var driller = load("res://Driller.tscn")
 var bouncer = load("res://Bouncer.tscn")
 var timer = 5
@@ -13,9 +9,8 @@ func _ready():
 	randomize()
 	spawn()
 	$Timer.start(timer)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+
 
 func spawn():
 	var enemy
@@ -29,3 +24,6 @@ func spawn():
 func _on_Timer_timeout():
 	spawn()
 	$Timer.start($Timer.time_left * 0.99)
+
+func _on_World_GameRestart():
+	timer = 5
