@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://cannon tube.png" type="Texture" id=1]
 [ext_resource path="res://cannon base.png" type="Texture" id=2]
@@ -9,14 +9,13 @@
 [ext_resource path="res://wall_physical.tres" type="PhysicsMaterial" id=7]
 [ext_resource path="res://cannon tube.gd" type="Script" id=8]
 [ext_resource path="res://window.png" type="Texture" id=9]
-[ext_resource path="res://wallSprite.gd" type="Script" id=10]
 [ext_resource path="res://SpaceGirders.png" type="Texture" id=11]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 48.4116
 height = 82.2352
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 38.5288
 height = 110.308
 
@@ -110,7 +109,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueCannon"]
 position = Vector2( 3.06616, 1.00137 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="cannon base" type="Sprite" parent="BlueCannon"]
 rotation = 1.5708
@@ -129,7 +128,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedCannon"]
 position = Vector2( 1.96997, -1.22943 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="cannon base" type="Sprite" parent="RedCannon"]
 rotation = -1.5708
@@ -147,7 +146,6 @@ scale = Vector2( 0.6, 0.6 )
 [node name="wall section clean" type="Sprite" parent="Walls"]
 position = Vector2( -473.333, 0 )
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean"]
 physics_material_override = ExtResource( 7 )
@@ -174,7 +172,6 @@ position = Vector2( -386.874, -50.3442 )
 rotation = 0.523599
 texture = ExtResource( 6 )
 offset = Vector2( -111.873, -149.517 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean2"]
 physics_material_override = ExtResource( 7 )
@@ -197,7 +194,6 @@ wait_time = 3.0
 position = Vector2( -234, -409 )
 rotation = 1.0472
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean3"]
 physics_material_override = ExtResource( 7 )
@@ -219,7 +215,6 @@ wait_time = 3.0
 position = Vector2( 2.33301, -471.167 )
 rotation = 1.5708
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean4"]
 physics_material_override = ExtResource( 7 )
@@ -235,7 +230,6 @@ shape = SubResource( 3 )
 position = Vector2( 240.333, -409 )
 rotation = 2.0944
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean5"]
 physics_material_override = ExtResource( 7 )
@@ -257,7 +251,6 @@ wait_time = 3.0
 position = Vector2( 414.333, -235.766 )
 rotation = 2.61799
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean6"]
 physics_material_override = ExtResource( 7 )
@@ -273,7 +266,6 @@ wait_time = 3.0
 position = Vector2( 476.666, 0 )
 rotation = -3.14159
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean7"]
 physics_material_override = ExtResource( 7 )
@@ -295,7 +287,6 @@ shape = SubResource( 3 )
 position = Vector2( 414.333, 238.666 )
 rotation = -2.61799
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean8"]
 physics_material_override = ExtResource( 7 )
@@ -317,7 +308,6 @@ wait_time = 3.0
 position = Vector2( 240.333, 413.802 )
 rotation = -2.09439
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean9"]
 physics_material_override = ExtResource( 7 )
@@ -345,7 +335,6 @@ wait_time = 3.0
 position = Vector2( 4.09875, 474.401 )
 rotation = -1.5708
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean10"]
 physics_material_override = ExtResource( 7 )
@@ -367,7 +356,6 @@ wait_time = 3.0
 position = Vector2( -234, 412.036 )
 rotation = -1.0472
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean11"]
 physics_material_override = ExtResource( 7 )
@@ -389,7 +377,6 @@ wait_time = 3.0
 position = Vector2( -409, 238.666 )
 rotation = -0.523599
 texture = ExtResource( 6 )
-script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean12"]
 physics_material_override = ExtResource( 7 )
@@ -417,14 +404,3 @@ wait_time = 3.0
 [connection signal="shoot" from="RedCannon" to="." method="_on_RedCannon_shoot"]
 [connection signal="shoot" from="RedCannon/cannon base/cannon tube" to="RedCannon" method="_on_cannon_tube_shoot"]
 [connection signal="destroyed" from="Walls/wall section clean/wall" to="Walls/wall section clean" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean2/wall" to="Walls/wall section clean2" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean3/wall" to="Walls/wall section clean3" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean4/wall" to="Walls/wall section clean4" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean5/wall" to="Walls/wall section clean5" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean6/wall" to="Walls/wall section clean6" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean7/wall" to="Walls/wall section clean7" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean8/wall" to="Walls/wall section clean8" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean9/wall" to="Walls/wall section clean9" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean10/wall" to="Walls/wall section clean10" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean11/wall" to="Walls/wall section clean11" method="_on_wall_destroyed"]
-[connection signal="destroyed" from="Walls/wall section clean12/wall" to="Walls/wall section clean12" method="_on_wall_destroyed"]
