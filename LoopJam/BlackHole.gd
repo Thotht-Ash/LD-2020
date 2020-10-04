@@ -5,7 +5,6 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var driller = load("res://Driller.tscn")
-var cutter = load("res://Cutter.tscn")
 var timer = 5
 
 # Called when the node enters the scene tree for the first time.
