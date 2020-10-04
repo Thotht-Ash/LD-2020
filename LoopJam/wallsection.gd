@@ -2,6 +2,7 @@ extends StaticBody2D
 
 var zero = Vector2(0,0)
 var health = 50
+signal destroyed
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,6 +16,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if health < 1:
+		#emit_signal("destroyed")
+		get_parent().visible = false
 		call_deferred("free")
 
 func damaged(type):
