@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 signal shoot(plasma, direction, location)
 
@@ -27,3 +27,7 @@ signal shoot(plasma, direction, location)
 
 func _on_cannon_tube_shoot(plasma, direction, location):
 	emit_signal("shoot", plasma, direction, location)
+
+
+func _on_RedCannon_body_entered(body):
+	pass # Replace with function body.

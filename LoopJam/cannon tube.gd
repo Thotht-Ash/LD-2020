@@ -21,3 +21,11 @@ func _process(delta):
 	look_at(get_global_mouse_position())
 	rotation += PI/2
 	timeSinceFiring += 1
+
+
+func _on_RedCannon_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_BlueCannon_body_entered(body):
+	pass # Replace with function body.
