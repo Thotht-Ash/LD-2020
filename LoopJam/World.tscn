@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://PlayArea.gd" type="Script" id=5]
 [ext_resource path="res://start_sound.gd" type="Script" id=6]
 [ext_resource path="res://game start v2.wav" type="AudioStream" id=7]
+[ext_resource path="res://phantom-from-space-by-kevin-macleod-from-filmmusic-io.wav" type="AudioStream" id=8]
+[ext_resource path="res://BGM-CREDIT.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 712, 500 )
@@ -39,5 +41,12 @@ shape = SubResource( 1 )
 stream = ExtResource( 7 )
 volume_db = -20.0
 script = ExtResource( 6 )
+
+[node name="BGM-CREDIT" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -20.0
+script = ExtResource( 9 )
 [connection signal="shoot" from="Ship" to="." method="_on_Ship_shoot"]
 [connection signal="body_exited" from="PlayArea" to="PlayArea" method="_on_PlayArea_body_exited"]
+[connection signal="finished" from="start_sound" to="BGM-CREDIT" method="_on_start_sound_finished"]
+[connection signal="finished" from="BGM-CREDIT" to="BGM-CREDIT" method="_on_BGMCREDIT_finished"]
