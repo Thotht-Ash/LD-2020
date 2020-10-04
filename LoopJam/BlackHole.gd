@@ -28,4 +28,7 @@ func spawn():
 
 func _on_Timer_timeout():
 	spawn()
-	$Timer.start($Timer.time_left * 0.99)
+	timer = timer*0.999
+	if timer < 1:
+		timer = 1
+	$Timer.start(timer)
