@@ -16,6 +16,13 @@ var scale_v = 2
 func _ready():
 	rotationSpeed = rand_range(-PI/360,PI/360)
 
+func destroy():
+	if global_position.x < 0 or global_position.y < 0 or global_position.x > 1024 or global_position.y > 600:
+		connect("gameover", get_node("/root/World"), "end_state")
+		emit_signal("gameover")
+		disconnect("gameover", get_node("/root/World"), "end_state")
+	get_parent().destroy()
+
 func angular_velocity(angle):
 	normalised_v = Vector2(cos(angle),sin(angle))
 	position = position + normalised_v * speed
@@ -24,7 +31,7 @@ func angular_velocity(angle):
 func _process(delta):
 	rotation += rotationSpeed
 	if hitPoints < 1:
-		get_parent().cleanup()
+		get_parent().destroy()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.	
 func _physics_process(delta):

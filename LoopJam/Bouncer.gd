@@ -7,7 +7,7 @@ extends Node2D
 func angular_velocity(angle):
 	get_node("Bouncer_Object").angular_velocity(angle)
 	
-func cleanup():
+func destroy():
 	call_deferred("free")
 # Called when the node enters the scene tree for the first time.
 func _ready():
