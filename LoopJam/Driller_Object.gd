@@ -12,6 +12,7 @@ var normalised_v
 export var scale_v = 2
 export var acceleration = 5
 var accelerationFactor = acceleration/1000+1
+#var accelerationFactor = 1.005
 
 func destroy():
 	if global_position.x < 0 or global_position.y < 0 or global_position.x > 1024 or global_position.y > 600:

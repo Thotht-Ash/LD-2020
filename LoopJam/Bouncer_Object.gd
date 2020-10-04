@@ -4,6 +4,7 @@ extends KinematicBody2D
 
 signal damaged(type)
 signal destroy
+signal gameover
 
 export var hitPoints = 3
 export var speed = 10
