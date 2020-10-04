@@ -17,6 +17,13 @@ var dead = false
 func _ready():
 	rotationSpeed = rand_range(-PI/360,PI/360)
 
+func destroy():
+	if global_position.x < 0 or global_position.y < 0 or global_position.x > 1024 or global_position.y > 600:
+		connect("gameover", get_node("/root/World"), "end_state")
+		emit_signal("gameover")
+		disconnect("gameover", get_node("/root/World"), "end_state")
+		get_parent().destroy(false)
+
 func angular_velocity(angle, stop=false):
 	if not stop:
 		normalised_v = Vector2(cos(angle),sin(angle))
@@ -28,7 +35,7 @@ func angular_velocity(angle, stop=false):
 func _process(delta):
 	rotation += rotationSpeed
 	if hitPoints < 1 and not dead:
-		get_parent().cleanup()
+		get_parent().destroy()
 		dead = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.	
