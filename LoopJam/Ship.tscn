@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://cannon tube.png" type="Texture" id=1]
 [ext_resource path="res://cannon base.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://wall_physical.tres" type="PhysicsMaterial" id=7]
 [ext_resource path="res://cannon tube.gd" type="Script" id=8]
 [ext_resource path="res://window.png" type="Texture" id=9]
+[ext_resource path="res://wallSprite.gd" type="Script" id=10]
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 48.4116
@@ -68,10 +69,21 @@ scale = Vector2( 0.6, 0.6 )
 [node name="wall section clean" type="Sprite" parent="Walls"]
 position = Vector2( -473.333, 0 )
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Walls/wall section clean/wall"]
+position = Vector2( 13.1304, 69.4937 )
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="Walls/wall section clean/wall"]
+position = Vector2( -1.54053, -50.8076 )
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean/wall"]
 shape = SubResource( 3 )
@@ -84,10 +96,17 @@ position = Vector2( -386.874, -50.3442 )
 rotation = 0.523599
 texture = ExtResource( 6 )
 offset = Vector2( -111.873, -149.517 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean2"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite8" type="Sprite" parent="Walls/wall section clean2/wall"]
+position = Vector2( -101.564, -207.567 )
+rotation = -2.5034e-07
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean2/wall"]
 position = Vector2( -110.634, -149.28 )
@@ -100,10 +119,17 @@ wait_time = 3.0
 position = Vector2( -234, -409 )
 rotation = 1.0472
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean3"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite13" type="Sprite" parent="Walls/wall section clean3/wall"]
+position = Vector2( -4.56131, 87.7101 )
+rotation = -2.36034e-06
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean3/wall"]
 shape = SubResource( 3 )
@@ -115,6 +141,7 @@ wait_time = 3.0
 position = Vector2( 2.33301, -471.167 )
 rotation = 1.5708
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean4"]
 physics_material_override = ExtResource( 7 )
@@ -130,10 +157,17 @@ shape = SubResource( 3 )
 position = Vector2( 240.333, -409 )
 rotation = 2.0944
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean5"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite15" type="Sprite" parent="Walls/wall section clean5/wall"]
+position = Vector2( -0.344421, -80.4052 )
+rotation = -4.79221e-06
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean5/wall"]
 shape = SubResource( 3 )
@@ -145,6 +179,7 @@ wait_time = 3.0
 position = Vector2( 414.333, -235.766 )
 rotation = 2.61799
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean6"]
 physics_material_override = ExtResource( 7 )
@@ -160,10 +195,17 @@ wait_time = 3.0
 position = Vector2( 476.666, 0 )
 rotation = -3.14159
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean7"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="Walls/wall section clean7/wall"]
+position = Vector2( -0.452332, 41.8266 )
+rotation = 3.14159
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CutterTimer" type="Timer" parent="Walls/wall section clean7/wall"]
 wait_time = 3.0
@@ -175,10 +217,17 @@ shape = SubResource( 3 )
 position = Vector2( 414.333, 238.666 )
 rotation = -2.61799
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean8"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite9" type="Sprite" parent="Walls/wall section clean8/wall"]
+position = Vector2( 4.23996, 78.2879 )
+rotation = 3.14159
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean8/wall"]
 shape = SubResource( 3 )
@@ -190,10 +239,23 @@ wait_time = 3.0
 position = Vector2( 240.333, 413.802 )
 rotation = -2.09439
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean9"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite10" type="Sprite" parent="Walls/wall section clean9/wall"]
+position = Vector2( -4.43973, 83.6991 )
+rotation = 3.14159
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
+
+[node name="Sprite11" type="Sprite" parent="Walls/wall section clean9/wall"]
+position = Vector2( 11.4456, -71.2327 )
+rotation = 3.14159
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean9/wall"]
 shape = SubResource( 3 )
@@ -205,10 +267,17 @@ wait_time = 3.0
 position = Vector2( 4.09875, 474.401 )
 rotation = -1.5708
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean10"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="Walls/wall section clean10/wall"]
+position = Vector2( -1.67975, -53.8689 )
+rotation = -3.14159
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean10/wall"]
 shape = SubResource( 3 )
@@ -220,10 +289,17 @@ wait_time = 3.0
 position = Vector2( -234, 412.036 )
 rotation = -1.0472
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean11"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite16" type="Sprite" parent="Walls/wall section clean11/wall"]
+position = Vector2( 6.56354, 88.3612 )
+rotation = -3.14159
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean11/wall"]
 shape = SubResource( 3 )
@@ -235,10 +311,23 @@ wait_time = 3.0
 position = Vector2( -409, 238.666 )
 rotation = -0.523599
 texture = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall section clean12"]
 physics_material_override = ExtResource( 7 )
 script = ExtResource( 4 )
+
+[node name="Sprite18" type="Sprite" parent="Walls/wall section clean12/wall"]
+position = Vector2( 8.15546, 83.8326 )
+rotation = -3.14159
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
+
+[node name="Sprite19" type="Sprite" parent="Walls/wall section clean12/wall"]
+position = Vector2( -4.93713, 55.0533 )
+rotation = -3.14159
+scale = Vector2( 0.416667, 0.416667 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall section clean12/wall"]
 shape = SubResource( 3 )
@@ -252,82 +341,19 @@ margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="Control"]
-position = Vector2( -276.122, 41.6962 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite2" type="Sprite" parent="Control"]
-position = Vector2( -284.924, -30.4846 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite3" type="Sprite" parent="Control"]
-position = Vector2( 286.271, -25.0959 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite5" type="Sprite" parent="Control"]
-position = Vector2( -29.8621, 285.649 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite8" type="Sprite" parent="Control"]
-position = Vector2( -222.628, -168.531 )
-rotation = 0.523599
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite9" type="Sprite" parent="Control"]
-position = Vector2( 269.883, 101.248 )
-rotation = 0.523599
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite10" type="Sprite" parent="Control"]
-position = Vector2( 189.023, 225.479 )
-rotation = 1.0472
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite11" type="Sprite" parent="Control"]
-position = Vector2( 103.752, 263.703 )
-rotation = 1.0472
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite13" type="Sprite" parent="Control"]
-position = Vector2( -187.344, -221.457 )
-rotation = 1.0472
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite15" type="Sprite" parent="Control"]
-position = Vector2( 186.083, -221.457 )
-rotation = 2.0944
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite16" type="Sprite" parent="Control"]
-position = Vector2( -92.5171, 270.319 )
-rotation = 2.0944
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite18" type="Sprite" parent="Control"]
-position = Vector2( -216.013, 184.314 )
-rotation = 2.61799
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
-
-[node name="Sprite19" type="Sprite" parent="Control"]
-position = Vector2( -231.449, 173.287 )
-rotation = 2.61799
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
 [connection signal="shoot" from="BlueCannon" to="." method="_on_BlueCannon_shoot"]
 [connection signal="shoot" from="BlueCannon/cannon base/cannon tube" to="BlueCannon" method="_on_cannon_tube_shoot"]
 [connection signal="shoot" from="RedCannon" to="." method="_on_RedCannon_shoot"]
 [connection signal="shoot" from="RedCannon/cannon base/cannon tube" to="RedCannon" method="_on_cannon_tube_shoot"]
+[connection signal="destroyed" from="Walls/wall section clean/wall" to="Walls/wall section clean" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean2/wall" to="Walls/wall section clean2" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean3/wall" to="Walls/wall section clean3" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean4/wall" to="Walls/wall section clean4" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean5/wall" to="Walls/wall section clean5" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean6/wall" to="Walls/wall section clean6" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean7/wall" to="Walls/wall section clean7" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean8/wall" to="Walls/wall section clean8" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean9/wall" to="Walls/wall section clean9" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean10/wall" to="Walls/wall section clean10" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean11/wall" to="Walls/wall section clean11" method="_on_wall_destroyed"]
+[connection signal="destroyed" from="Walls/wall section clean12/wall" to="Walls/wall section clean12" method="_on_wall_destroyed"]
