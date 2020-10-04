@@ -32,3 +32,7 @@ func _physics_process(delta):
 			
 func destroy():
 	call_deferred("free")
+
+
+func _on_Timer_timeout():
+	destroy()

@@ -7,6 +7,7 @@ func angular_velocity(angle):
 	get_node("Driller_Object").angular_velocity(angle)
 	
 func destroy():
+	get_node("Driller_Object").angular_velocity(0, true)
 	get_node("Driller_Object/driller").visible = false
 	get_node("Driller_Object/deathAnimation").visible = true
 	get_node("Driller_Object/deathAnimation").play()
