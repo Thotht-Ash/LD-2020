@@ -21,7 +21,7 @@ extents = Vector2( 25, 130 )
 [node name="Ship" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="BlueCannon" type="Area2D" parent="."]
+[node name="BlueCannon" type="KinematicBody2D" parent="."]
 position = Vector2( -260, 0 )
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 3 )
@@ -40,7 +40,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 0, -64 )
 script = ExtResource( 8 )
 
-[node name="RedCannon" type="Area2D" parent="."]
+[node name="RedCannon" type="KinematicBody2D" parent="."]
 position = Vector2( 260, 0 )
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 3 )
