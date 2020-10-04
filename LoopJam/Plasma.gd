@@ -20,4 +20,12 @@ func _physics_process(delta):
 		if collidername == "BlackHoleBody":
 			call_deferred("free")
 		elif collidername == "wall":
-			call_deferred("free")
+			var reflect = collision.remainder.bounce(collision.normal)
+			velocity = velocity.bounce(collision.normal)
+			rotation = velocity[1]
+			move_and_collide(reflect)
+		elif collidername == "cannon_base":
+			var reflect = collision.remainder.bounce(collision.normal)
+			velocity = velocity.bounce(collision.normal)
+			rotation = velocity[1]
+			move_and_collide(reflect)

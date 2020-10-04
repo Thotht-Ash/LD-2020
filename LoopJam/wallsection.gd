@@ -13,7 +13,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(_delta):
+func _process(_delta):
+	if health < 1:
+		call_deferred("free")
+
 func damaged(type):
 	print("A Driller hit")
 	if type == "driller":
@@ -22,8 +25,10 @@ func damaged(type):
 		health = health - 1
 		$CutterTimer.connect("timeout", self, "cutter_timeout")
 		$CutterTimer.start()
-	# if health < threshold:
+	#if health < threshold:
 	# load new image
+
+
 
 func cutter_timeout():
 	health = health - 1
