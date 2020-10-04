@@ -12,10 +12,10 @@ var cutter = load("res://Cutter.tscn")
 func _ready():
 	randomize()
 	var enemy
-	if randi() % 2 == 0:
-		enemy = driller.instance()
-	else:
-		enemy = cutter.instance()
+	#if randi() % 2 == 0:
+	enemy = driller.instance()
+	#else:
+		#enemy = cutter.instance()
 	add_child(enemy)
 	enemy.angular_velocity(rand_range(0, 2*PI))
 	$Timer.start()
@@ -26,10 +26,10 @@ func _ready():
 
 func _on_Timer_timeout():
 	var enemy
-	if randi() % 2 == 0:
-		enemy = driller.instance()
-	else:
-		enemy = cutter.instance()
+	#if randi() % 2 == 0:
+	enemy = driller.instance()
+	#else:
+		#enemy = cutter.instance()
 	add_child(enemy)
 	enemy.angular_velocity(rand_range(0, 2*PI))
 	$Timer.start($Timer.time_left * 0.99)

@@ -28,21 +28,25 @@ func _physics_process(delta):
 	var collision = move_and_collide(normalised_v * scale_v * delta)
 	if collision:
 		var collidername = collision.collider.name
-		if collidername == "wall":
-			target = collision.collider
-			self.connect("damaged", target, "damaged", ["type"])
-			emit_signal("damaged", "driller")
-		elif collidername == "RedCannon" or collidername == "BlueCannon":
-			if connected:
+		if connected:
+			if collidername == "RedCannon" or collidername == "BlueCannon":
 				self.connect("stop_cutter", target, "stopped_cutter")
 				emit_signal("stop_cutter")
 				connected = false
+			elif collidername != "wall":
+				self.connect("stop_cutter", target, "stopped_cutter")
+				emit_signal("stop_cutter")
+				connected = false
+				get_parent().cleanup()
 		else:
-			if connected:
-				self.connect("stop_cutter", target, "stopped_cutter")
-				emit_signal("stop_cutter")
-				connected = false
-			get_parent().cleanup()
+			if collidername == "wall":
+				target = collision.collider
+				self.connect("damaged", target, "damaged")
+				emit_signal("damaged", "cutter")
+				self.disconnect("damaged", target, "damaged")
+				connected = true
+			elif not (collidername.begins_with("Cutter") or collidername.begins_with("Driller")) :
+				get_parent().cleanup()
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation
 		#else:
