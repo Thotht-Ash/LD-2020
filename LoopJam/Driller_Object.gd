@@ -5,6 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 signal damaged(type)
+signal destroy
 
 var normalised_v
 var scale_v = 2
@@ -30,7 +31,12 @@ func _physics_process(delta):
 			emit_signal("damaged", "driller")
 			self.disconnect("damaged", collision.collider, "damaged")
 			get_parent().cleanup()
-		elif "Plasma" in collidername or collidername == "BlueCannon" or collidername == "RedCannon":
+		elif "Plasma" in collidername:
+			self.connect("destroy", collision.collider, "destroy")
+			emit_signal("destroy")
+			self.disconnect("destroy", collision.collider, "destroy")
+			get_parent().cleanup()
+		elif collidername == "BlueCannon" or collidername == "RedCannon":
 			get_parent().cleanup()
 		else:
 			print(collidername)
