@@ -21,17 +21,13 @@ func _process(_delta):
 		call_deferred("free")
 
 func damaged(type):
-	print("A Driller hit")
 	if type == "driller":
 		health = health - 50
-	if type == "cutter":
-		health = health - 1
-		$CutterTimer.connect("timeout", self, "cutter_timeout")
-		$CutterTimer.start()
 	#if health < threshold:
 	# load new image
 
-
+func destroy():
+	pass
 
 func cutter_timeout():
 	health = health - 1

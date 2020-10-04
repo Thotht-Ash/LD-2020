@@ -23,8 +23,6 @@ signal shoot(plasma, direction, location)
 #	pass
 
 
-
-
 func _on_cannon_tube_shoot(plasma, direction, location):
 	emit_signal("shoot", plasma, direction, location)
 

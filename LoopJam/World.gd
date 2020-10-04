@@ -22,3 +22,6 @@ func _on_Ship_shoot(plasma, direction, location):
 	p1.angular_velocity(direction)
 	p1.set_meta('type','shot')
 	add_child(p1)
+
+func end_state():
+	print("Endstate reached")
