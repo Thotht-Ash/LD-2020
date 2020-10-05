@@ -15,19 +15,26 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if health < 1:
-		emit_signal("destroyed")
-		get_parent().visible = false
-		call_deferred("free")
+#func _process(_delta):
+#	pass
 
 func damaged(type):
 	if type == "driller":
 		health = health - 50
 	if type == "bouncer":
 		health = health - 50
+	if health < 1:
+		emit_signal("destroyed")
+		get_parent().visible = false
+		get_node("CollisionShape2D").disabled = true
 	#if health < threshold:
 	# load new image
+
+func _input(event):
+	if Input.is_action_pressed("restart"):
+		get_parent().visible = true
+		get_node("CollisionShape2D").disabled = false
+		health = 50
 
 func destroy():
 	pass

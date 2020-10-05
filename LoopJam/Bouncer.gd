@@ -28,3 +28,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func _input(event):
+	if Input.is_action_pressed("restart"):
+		call_deferred("free")

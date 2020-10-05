@@ -34,6 +34,6 @@ func end_state():
 func _input(event):
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
-	if Input.is_action_pressed("restart") && (gameOver == true):
+	if Input.is_action_pressed("restart"):
 		gameOver = false
 		emit_signal("GameRestart")

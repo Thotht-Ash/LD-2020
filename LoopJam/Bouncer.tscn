@@ -3,7 +3,7 @@
 [ext_resource path="res://Bouncer.gd" type="Script" id=1]
 [ext_resource path="res://Bouncer_Object.gd" type="Script" id=2]
 [ext_resource path="res://alien_bounce.png" type="Texture" id=3]
-[ext_resource path="res://alien death.wav" type="AudioStream" id=4]
+[ext_resource path="res://bouncer_death.wav" type="AudioStream" id=4]
 [ext_resource path="res://BounSprite.gd" type="Script" id=5]
 [ext_resource path="res://bouncer death frames/bouncer death21.png" type="Texture" id=6]
 [ext_resource path="res://bouncer death frames/bouncer death22.png" type="Texture" id=7]
