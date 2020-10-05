@@ -26,6 +26,7 @@ func damaged(type):
 	if health < 1:
 		emit_signal("destroyed")
 		get_parent().visible = false
+		get_parent().get_parent().explode()
 		get_node("CollisionShape2D").disabled = true
 	#if health < threshold:
 	# load new image

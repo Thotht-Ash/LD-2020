@@ -5,6 +5,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+rotation = 1.5708
 amount = 150
 lifetime = 6.0
 explosiveness = 1.0
@@ -19,6 +20,7 @@ scale_amount_random = 0.83
 color = Color( 0.843137, 0.843137, 0.843137, 1 )
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+rotation = 1.5708
 amount = 40
 lifetime = 6.0
 explosiveness = 1.0
@@ -37,6 +39,7 @@ scale_amount_random = 0.33
 color = Color( 0.819608, 0.819608, 0.819608, 1 )
 
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+rotation = 1.5708
 amount = 10
 lifetime = 6.0
 explosiveness = 1.0
@@ -55,7 +58,6 @@ scale_amount_random = 0.68
 color = Color( 0.819608, 0.819608, 0.819608, 1 )
 
 [node name="wall section clean" type="Sprite" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.192157 )
-position = Vector2( -0.203888, 1.00467 )
-rotation = -1.5708
 texture = ExtResource( 1 )
