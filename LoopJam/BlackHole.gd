@@ -30,3 +30,4 @@ func _on_Timer_timeout():
 
 func _on_World_GameRestart():
 	timer = 5
+	spawn()
