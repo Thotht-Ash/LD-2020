@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://wall section clean.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 150
+lifetime = 6.0
+explosiveness = 1.0
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 25 )
+direction = Vector2( 0, 10 )
+spread = 58.06
+gravity = Vector2( 0, 0 )
+initial_velocity = 150.0
+scale_amount = 4.0
+scale_amount_random = 0.83
+color = Color( 0.843137, 0.843137, 0.843137, 1 )
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+amount = 40
+lifetime = 6.0
+explosiveness = 1.0
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 25 )
+direction = Vector2( 0, 10 )
+spread = 58.06
+gravity = Vector2( 0, 0 )
+initial_velocity = 150.0
+angular_velocity = 294.19
+angular_velocity_random = 1.0
+angle = 294.2
+angle_random = 1.0
+scale_amount = 15.0
+scale_amount_random = 0.33
+color = Color( 0.819608, 0.819608, 0.819608, 1 )
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+amount = 10
+lifetime = 6.0
+explosiveness = 1.0
+emission_shape = 2
+emission_rect_extents = Vector2( 100, 25 )
+direction = Vector2( 0, 10 )
+spread = 58.06
+gravity = Vector2( 0, 0 )
+initial_velocity = 150.0
+angular_velocity = 294.19
+angular_velocity_random = 1.0
+angle = 294.2
+angle_random = 1.0
+scale_amount = 40.0
+scale_amount_random = 0.68
+color = Color( 0.819608, 0.819608, 0.819608, 1 )
+
+[node name="wall section clean" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.192157 )
+position = Vector2( -0.203888, 1.00467 )
+rotation = -1.5708
+texture = ExtResource( 1 )
