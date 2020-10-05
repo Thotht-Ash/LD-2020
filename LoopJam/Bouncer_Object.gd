@@ -6,7 +6,7 @@ signal damaged(type)
 signal destroy
 signal gameover
 
-export var hitPoints = 3
+export var hitPoints = 2
 export var speed = 10
 var rotationSpeed
 var normalised_v
@@ -38,6 +38,10 @@ func _process(delta):
 		get_parent().destroy()
 		dead = true
 
+func shootDown(normal):
+	normalised_v = normalised_v.bounce(normal)
+	hitPoints -= 1
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.	
 func _physics_process(delta):
 	var collision = move_and_collide(normalised_v * scale_v * delta)
@@ -48,19 +52,15 @@ func _physics_process(delta):
 			emit_signal("damaged", "bouncer")
 			self.disconnect("damaged", collision.collider, "damaged")
 			hitPoints -= 1
-		elif "Plasma" in collidername:
+		#elif "Plasma" in collidername:
 			#self.connect("bounce", collision.collider, "bounce")
 			#emit_signal("bounce")
 			#self.disconnect("bounce", collision.collider, "bounce")
-			hitPoints -= 1
+			#hitPoints -= 1
 		elif collidername == "BlueCannon" or collidername == "RedCannon":
 			hitPoints -= 1
-		else:
-			print(collidername)
 		
-		var reflect = collision.remainder.bounce(collision.normal)
 		normalised_v = normalised_v.bounce(collision.normal)
-		move_and_collide(reflect)
 		#if collidername.begins_with("wall"):
 		#	pass # play wall animation
 		#else:

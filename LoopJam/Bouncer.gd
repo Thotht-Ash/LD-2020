@@ -16,8 +16,8 @@ func destroy(sound=true):
 	get_node("Bouncer_Object/deathAnimation").play()
 	if sound:
 		get_node("deathsound").play()
-		#yield(get_node("deathsound"), "finished")
-	yield(get_node("Bouncer_Object/deathAnimation"),"animation_finished")
+		yield(get_node("deathsound"), "finished")
+	#yield(get_node("Bouncer_Object/deathAnimation"),"animation_finished")
 	call_deferred("free")
 # Called when the node enters the scene tree for the first time.
 func _ready():

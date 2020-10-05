@@ -15,7 +15,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	highscore += 1
+	pass
+	#	highscore += 1
 
 func _input(event):
 	if Input.is_action_pressed("restart"):
@@ -26,7 +27,11 @@ func _on_PlayArea_body_exited(body):
 		if body.global_position.x > 0 and body.global_position.x < 1024 and body.global_position.y > 0 and body.global_position.y < 600 and not get_parent().gameOver:
 			highscore += 1
 			print(highscore)
-
-	connect("destroy", body, "destroy")
-	emit_signal("destroy")
-	disconnect("destroy", body, "destroy")
+	if "Plasma" in body.name:
+		connect("destroy", body, "cleanup")
+		emit_signal("destroy")
+		disconnect("destroy", body, "cleanup")
+	else:
+		connect("destroy", body, "destroy")
+		emit_signal("destroy")
+		disconnect("destroy", body, "destroy")

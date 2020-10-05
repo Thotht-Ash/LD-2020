@@ -166,7 +166,7 @@ texture = ExtResource( 6 )
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall1/wall section clean"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall" type="StaticBody2D" parent="Walls/wall1/wall section clean"]
@@ -219,7 +219,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall2/wall section clean2"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall3" type="Node2D" parent="Walls"]
@@ -249,7 +249,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall3/wall section clean3"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall4" type="Node2D" parent="Walls"]
@@ -273,7 +273,7 @@ shape = SubResource( 3 )
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall4/wall section clean4"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall5" type="Node2D" parent="Walls"]
@@ -303,7 +303,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall5/wall section clean5"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall6" type="Node2D" parent="Walls"]
@@ -327,7 +327,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall6/wall section clean6"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall7" type="Node2D" parent="Walls"]
@@ -357,7 +357,7 @@ shape = SubResource( 3 )
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall7/wall section clean7"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall8" type="Node2D" parent="Walls"]
@@ -387,7 +387,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall8/wall section clean8"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall9" type="Node2D" parent="Walls"]
@@ -423,7 +423,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall9/wall section clean9"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall10" type="Node2D" parent="Walls"]
@@ -453,7 +453,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall10/wall section clean10"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall11" type="Node2D" parent="Walls"]
@@ -483,7 +483,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall11/wall section clean11"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 
 [node name="wall12" type="Node2D" parent="Walls"]
@@ -519,7 +519,7 @@ wait_time = 3.0
 
 [node name="break" type="AudioStreamPlayer" parent="Walls/wall12/wall section clean12"]
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -28.0
 script = ExtResource( 12 )
 [connection signal="shoot" from="." to="Pew" method="_on_Ship_shoot"]
 [connection signal="shoot" from="BlueCannon" to="." method="_on_BlueCannon_shoot"]

@@ -23,7 +23,7 @@ func destroy():
 func _ready():
 	pass # Replace with function body.
 
-func _shootDown():
+func shootDown():
 	emit_signal("destroy")
 
 func angular_velocity(angle, stop=false):
@@ -46,7 +46,6 @@ func _physics_process(delta):
 			self.disconnect("damaged", collision.collider, "damaged")
 			get_parent().destroy()
 		elif "Plasma" in collidername:
-			print(collidername)
 			#self.connect("destroy", collision.collider, "destroy")
 			#emit_signal("destroy")
 			#self.disconnect("destroy", collision.collider, "destroy")
