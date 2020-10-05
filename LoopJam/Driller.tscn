@@ -25,32 +25,31 @@
 [ext_resource path="res://driller death anim/driller2.png" type="Texture" id=23]
 [ext_resource path="res://driller death anim/driller11.png" type="Texture" id=24]
 [ext_resource path="res://driller death anim/driller12.png" type="Texture" id=25]
-[ext_resource path="res://alien death.wav" type="AudioStream" id=26]
+[ext_resource path="res://driller_death.wav" type="AudioStream" id=26]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 15 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "default",
-"speed": 30.0
+"speed": 18.0
 } ]
 
 [node name="Driller" type="Node2D"]
-scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 3 )
 
 [node name="Driller_Object" type="KinematicBody2D" parent="."]
 collision_layer = 5
 collision_mask = 0
 script = ExtResource( 2 )
+scale_v = 15
+acceleration = 1000.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Driller_Object"]
-position = Vector2( -0.0398885, -6.18427 )
 scale = Vector2( 0.882812, 1.1227 )
 polygon = PoolVector2Array( -39.3543, 51.7162, 3.07343, -54.6516, 38.6737, 49.6548 )
 
 [node name="driller" type="Sprite" parent="Driller_Object"]
-position = Vector2( -1.00138, -6.50895 )
 rotation = 1.74846e-07
 texture = ExtResource( 1 )
 

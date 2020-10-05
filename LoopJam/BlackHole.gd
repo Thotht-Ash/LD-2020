@@ -23,10 +23,10 @@ func spawn():
 
 func _on_Timer_timeout():
 	spawn()
-	timer = timer*0.999
-	if timer < 1:
-		timer = 1
+	timer = timer*0.95
+	if timer < 1.5:
+		timer = 1.5
 	$Timer.start(timer)
 
 func _on_World_GameRestart():
-	timer = 5
+	timer = 4

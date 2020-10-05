@@ -10,9 +10,8 @@ signal gameover
 
 var normalised_v
 export var scale_v = 2
-export var acceleration = 5
-#var accelerationFactor = acceleration/1000+1
-var accelerationFactor = 1.005
+export var acceleration = 0.5
+var accelerationFactor = 1+(acceleration/100)
 
 func destroy():
 	if global_position.x < 0 or global_position.y < 0 or global_position.x > 1024 or global_position.y > 600:
@@ -23,6 +22,9 @@ func destroy():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+func _shootDown():
+	emit_signal("destroy")
 
 func angular_velocity(angle, stop=false):
 	if not stop:
@@ -45,9 +47,9 @@ func _physics_process(delta):
 			get_parent().destroy()
 		elif "Plasma" in collidername:
 			print(collidername)
-			self.connect("destroy", collision.collider, "destroy")
-			emit_signal("destroy")
-			self.disconnect("destroy", collision.collider, "destroy")
+			#self.connect("destroy", collision.collider, "destroy")
+			#emit_signal("destroy")
+			#self.disconnect("destroy", collision.collider, "destroy")
 			get_parent().destroy()
 		elif collidername == "BlueCannon" or collidername == "RedCannon":
 			get_parent().destroy()

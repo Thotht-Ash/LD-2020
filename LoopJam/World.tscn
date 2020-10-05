@@ -19,6 +19,7 @@ script = ExtResource( 2 )
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 530.636, 297.259 )
 scale = Vector2( 0.57, 0.57 )
+z_index = -990
 texture = ExtResource( 4 )
 
 [node name="Ship" parent="." instance=ExtResource( 1 )]

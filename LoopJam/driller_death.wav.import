@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/driller_death.wav-c82cb49baf20b6364359dd14912b3f60.sample"
+
+[deps]
+
+source_file="res://driller_death.wav"
+dest_files=[ "res://.import/driller_death.wav-c82cb49baf20b6364359dd14912b3f60.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

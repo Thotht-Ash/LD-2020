@@ -15,8 +15,8 @@ var dead = false
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	rotationSpeed = rand_range(-PI/360,PI/360)
+#func _ready():
+	#pass
 
 func destroy():
 	if global_position.x < 0 or global_position.y < 0 or global_position.x > 1024 or global_position.y > 600:
@@ -34,7 +34,6 @@ func angular_velocity(angle, stop=false):
 		normalised_v = Vector2(0,0)
 
 func _process(delta):
-	rotation += rotationSpeed
 	if hitPoints < 1 and not dead:
 		get_parent().destroy()
 		dead = true
@@ -50,9 +49,9 @@ func _physics_process(delta):
 			self.disconnect("damaged", collision.collider, "damaged")
 			hitPoints -= 1
 		elif "Plasma" in collidername:
-			self.connect("destroy", collision.collider, "destroy")
-			emit_signal("destroy")
-			self.disconnect("destroy", collision.collider, "destroy")
+			#self.connect("bounce", collision.collider, "bounce")
+			#emit_signal("bounce")
+			#self.disconnect("bounce", collision.collider, "bounce")
 			hitPoints -= 1
 		elif collidername == "BlueCannon" or collidername == "RedCannon":
 			hitPoints -= 1
