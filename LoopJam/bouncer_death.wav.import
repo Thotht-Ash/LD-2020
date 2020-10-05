@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bouncer_death.wav-74eec3604ec7bffff1b461451fd5b3ed.sample"
+
+[deps]
+
+source_file="res://bouncer_death.wav"
+dest_files=[ "res://.import/bouncer_death.wav-74eec3604ec7bffff1b461451fd5b3ed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -3,7 +3,7 @@ extends Sprite
 signal shoot(plasma, direction, location)
 
 var Plasma = preload("res://Plasma.tscn")
-export var firingCooldown = 120
+export var firingCooldown = 90
 var timeSinceFiring = 0
 
 # Called when the node enters the scene tree for the first time.

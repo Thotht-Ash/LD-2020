@@ -14,9 +14,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	highscore += 1
 
+func _input(event):
+	if Input.is_action_pressed("restart"):
+		highscore = 0
 
 func _on_PlayArea_body_exited(body):
 	if "Bouncer" in body.name or "Driller" in body.name:
