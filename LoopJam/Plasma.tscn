@@ -29,4 +29,22 @@ autostart = true
 stream = ExtResource( 6 )
 volume_db = -30.0
 script = ExtResource( 5 )
+
+[node name="ParticleEnd" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.1
+emission_shape = 1
+emission_sphere_radius = 8.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+damping = 35.43
+scale_amount = 1.5
+color = Color( 0.188235, 1, 0.184314, 1 )
+
+[node name="particleTimer" type="Timer" parent="."]
 [connection signal="play_hit" from="." to="hit" method="_on_Plasma_play_hit"]
+[connection signal="timeout" from="particleTimer" to="." method="_on_particleTimer_timeout"]
