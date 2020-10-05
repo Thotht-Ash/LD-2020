@@ -15,8 +15,11 @@ func cleanup():
 	$Sprite.visible = false
 	if $CollisionShape2D:
 		$CollisionShape2D.free()
-	yield(get_node("hit"), "finished")
-	call_deferred("free")
+	velocity = Vector2(0,0)
+	var PartEnd = get_node("ParticleEnd")
+	PartEnd.emitting = true
+	$particleTimer.start(2.2)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -38,12 +41,12 @@ func _physics_process(delta):
 			#self.connect("blackhole_contact", collision.collider, "spawn")
 			#emit_signal("blackhole_contact")
 			#self.disconnect("blackhole_contact", collision.collider, "spawn")
-			destroy()
+			cleanup()
 		elif "Driller" in collidername:
 			emit_signal("play_hit")
-			self.connect("shootDown", collision.collider, "shootDown")
-			emit_signal("shootDown")
-			self.disconnect("shootDown", collision.collider, "shootDown")
+			#self.connect("shootDown", collision.collider, "shootDown")
+			#emit_signal("shootDown")
+			#self.disconnect("shootDown", collision.collider, "shootDown")
 			#var reflect = collision.remainder.bounce(collision.normal)
 			#velocity = velocity.bounce(collision.normal)
 			#move_and_collide(reflect)
@@ -77,7 +80,16 @@ func _physics_process(delta):
 
 
 func destroy():
-	call_deferred("free")
+	#get_node("ParticleEnd").emitting = true
+#	call_deferred("free")
+	pass
 
 func _on_Timer_timeout():
 	destroy()
+
+
+
+
+func _on_particleTimer_timeout():
+	call_deferred("free")
+	pass # Replace with function body.
