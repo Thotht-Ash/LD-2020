@@ -41,9 +41,9 @@ func _physics_process(delta):
 		elif "Driller" in collidername:
 			print(collidername)
 			emit_signal("play_hit")
-			self.connect("shootDown", collision.collider, "shootDown")
-			emit_signal("shootDown")
-			self.disconnect("shootDown", collision.collider, "shootDown")
+			#self.connect("shootDown", collision.collider, "shootDown")
+			#emit_signal("shootDown")
+			#self.disconnect("shootDown", collision.collider, "shootDown")
 			#var reflect = collision.remainder.bounce(collision.normal)
 			#velocity = velocity.bounce(collision.normal)
 			#move_and_collide(reflect)
